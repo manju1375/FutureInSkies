@@ -4,19 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ProgressBar
-        android:id="@+id/progressbar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/tvloading"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:max="100"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:indeterminateTint="@android:color/holo_blue_dark"
-        android:layout_marginTop="-7dp"
-        android:visibility="invisible"
-        android:layout_alignParentTop="true"/>
-    <android.support.v7.widget.RecyclerView
+        android:layout_centerInParent="true"
+        android:text="Loading..."/>
+       <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
