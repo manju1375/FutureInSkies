@@ -21,7 +21,7 @@ public class Launches {
     private String launchYear;
     @SerializedName("launch_date_unix")
     @Expose
-    private Integer launchDateUnix;
+    private Long launchDateUnix;
     @SerializedName("launch_date_utc")
     @Expose
     private String launchDateUtc;
@@ -100,11 +100,11 @@ public class Launches {
         this.launchYear = launchYear;
     }
 
-    public Integer getLaunchDateUnix() {
+    public Long getLaunchDateUnix() {
         return launchDateUnix;
     }
 
-    public void setLaunchDateUnix(Integer launchDateUnix) {
+    public void setLaunchDateUnix(Long launchDateUnix) {
         this.launchDateUnix = launchDateUnix;
     }
 
