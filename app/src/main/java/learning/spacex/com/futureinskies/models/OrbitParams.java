@@ -1,27 +1,56 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class OrbitParams {
 
+    @SerializedName("reference_system")
+    @Expose
     private String referenceSystem;
+    @SerializedName("regime")
+    @Expose
     private String regime;
-    private Integer longitude;
+    @SerializedName("longitude")
+    @Expose
+    private Double longitude;
+    @SerializedName("semi_major_axis_km")
+    @Expose
     private Double semiMajorAxisKm;
+    @SerializedName("eccentricity")
+    @Expose
     private Double eccentricity;
+    @SerializedName("periapsis_km")
+    @Expose
     private Double periapsisKm;
+    @SerializedName("apoapsis_km")
+    @Expose
     private Double apoapsisKm;
+    @SerializedName("inclination_deg")
+    @Expose
     private Double inclinationDeg;
+    @SerializedName("period_min")
+    @Expose
     private Double periodMin;
+    @SerializedName("lifespan_years")
+    @Expose
     private Integer lifespanYears;
+    @SerializedName("epoch")
+    @Expose
     private String epoch;
+    @SerializedName("mean_motion")
+    @Expose
     private Double meanMotion;
+    @SerializedName("raan")
+    @Expose
     private Double raan;
+    @SerializedName("arg_of_pericenter")
+    @Expose
     private Double argOfPericenter;
+    @SerializedName("mean_anomaly")
+    @Expose
     private Double meanAnomaly;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getReferenceSystem() {
         return referenceSystem;
@@ -39,11 +68,11 @@ public class OrbitParams {
         this.regime = regime;
     }
 
-    public Integer getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Integer longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
@@ -141,14 +170,6 @@ public class OrbitParams {
 
     public void setMeanAnomaly(Double meanAnomaly) {
         this.meanAnomaly = meanAnomaly;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

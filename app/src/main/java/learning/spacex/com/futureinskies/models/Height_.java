@@ -1,14 +1,17 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Height_ {
 
+    @SerializedName("meters")
+    @Expose
     private Double meters;
+    @SerializedName("feet")
+    @Expose
     private Double feet;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Double getMeters() {
         return meters;
@@ -24,14 +27,6 @@ public class Height_ {
 
     public void setFeet(Double feet) {
         this.feet = feet;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

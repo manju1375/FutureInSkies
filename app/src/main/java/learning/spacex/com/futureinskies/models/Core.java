@@ -1,20 +1,35 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Core {
 
+    @SerializedName("core_serial")
+    @Expose
     private String coreSerial;
+    @SerializedName("flight")
+    @Expose
     private Integer flight;
+    @SerializedName("block")
+    @Expose
     private Integer block;
+    @SerializedName("reused")
+    @Expose
     private Boolean reused;
+    @SerializedName("land_success")
+    @Expose
     private Boolean landSuccess;
+    @SerializedName("landing_intent")
+    @Expose
     private Boolean landingIntent;
+    @SerializedName("landing_type")
+    @Expose
     private String landingType;
+    @SerializedName("landing_vehicle")
+    @Expose
     private String landingVehicle;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getCoreSerial() {
         return coreSerial;
@@ -78,14 +93,6 @@ public class Core {
 
     public void setLandingVehicle(String landingVehicle) {
         this.landingVehicle = landingVehicle;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

@@ -1,24 +1,45 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Payload {
 
+    @SerializedName("payload_id")
+    @Expose
     private String payloadId;
+    @SerializedName("norad_id")
+    @Expose
     private List<Integer> noradId = null;
+    @SerializedName("reused")
+    @Expose
     private Boolean reused;
+    @SerializedName("customers")
+    @Expose
     private List<String> customers = null;
+    @SerializedName("nationality")
+    @Expose
     private String nationality;
+    @SerializedName("manufacturer")
+    @Expose
     private String manufacturer;
+    @SerializedName("payload_type")
+    @Expose
     private String payloadType;
-    private Integer payloadMassKg;
+    @SerializedName("payload_mass_kg")
+    @Expose
+    private Double payloadMassKg;
+    @SerializedName("payload_mass_lbs")
+    @Expose
     private Double payloadMassLbs;
+    @SerializedName("orbit")
+    @Expose
     private String orbit;
+    @SerializedName("orbit_params")
+    @Expose
     private OrbitParams orbitParams;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getPayloadId() {
         return payloadId;
@@ -76,11 +97,11 @@ public class Payload {
         this.payloadType = payloadType;
     }
 
-    public Integer getPayloadMassKg() {
+    public Double getPayloadMassKg() {
         return payloadMassKg;
     }
 
-    public void setPayloadMassKg(Integer payloadMassKg) {
+    public void setPayloadMassKg(Double payloadMassKg) {
         this.payloadMassKg = payloadMassKg;
     }
 
@@ -106,14 +127,6 @@ public class Payload {
 
     public void setOrbitParams(OrbitParams orbitParams) {
         this.orbitParams = orbitParams;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

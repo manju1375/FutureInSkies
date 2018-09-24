@@ -1,17 +1,26 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Reuse {
 
+    @SerializedName("core")
+    @Expose
     private Boolean core;
+    @SerializedName("side_core1")
+    @Expose
     private Boolean sideCore1;
+    @SerializedName("side_core2")
+    @Expose
     private Boolean sideCore2;
+    @SerializedName("fairings")
+    @Expose
     private Boolean fairings;
+    @SerializedName("capsule")
+    @Expose
     private Boolean capsule;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Boolean getCore() {
         return core;
@@ -51,14 +60,6 @@ public class Reuse {
 
     public void setCapsule(Boolean capsule) {
         this.capsule = capsule;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

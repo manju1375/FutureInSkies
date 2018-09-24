@@ -1,15 +1,20 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class LaunchSite {
 
+    @SerializedName("site_id")
+    @Expose
     private String siteId;
+    @SerializedName("site_name")
+    @Expose
     private String siteName;
+    @SerializedName("site_name_long")
+    @Expose
     private String siteNameLong;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getSiteId() {
         return siteId;
@@ -33,14 +38,6 @@ public class LaunchSite {
 
     public void setSiteNameLong(String siteNameLong) {
         this.siteNameLong = siteNameLong;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

@@ -1,33 +1,72 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Launches {
 
+    @SerializedName("flight_number")
+    @Expose
     private Integer flightNumber;
+    @SerializedName("mission_name")
+    @Expose
     private String missionName;
+    @SerializedName("mission_id")
+    @Expose
     private List<String> missionId = null;
+    @SerializedName("launch_year")
+    @Expose
     private String launchYear;
+    @SerializedName("launch_date_unix")
+    @Expose
     private Integer launchDateUnix;
+    @SerializedName("launch_date_utc")
+    @Expose
     private String launchDateUtc;
+    @SerializedName("launch_date_local")
+    @Expose
     private String launchDateLocal;
+    @SerializedName("is_tentative")
+    @Expose
     private Boolean isTentative;
+    @SerializedName("tentative_max_precision")
+    @Expose
     private String tentativeMaxPrecision;
+    @SerializedName("rocket")
+    @Expose
     private Rocket rocket;
+    @SerializedName("ships")
+    @Expose
     private List<String> ships = null;
+    @SerializedName("telemetry")
+    @Expose
     private Telemetry telemetry;
+    @SerializedName("reuse")
+    @Expose
     private Reuse reuse;
+    @SerializedName("launch_site")
+    @Expose
     private LaunchSite launchSite;
+    @SerializedName("launch_success")
+    @Expose
     private Boolean launchSuccess;
+    @SerializedName("links")
+    @Expose
     private Links links;
+    @SerializedName("details")
+    @Expose
     private String details;
+    @SerializedName("upcoming")
+    @Expose
     private Boolean upcoming;
+    @SerializedName("static_fire_date_utc")
+    @Expose
     private String staticFireDateUtc;
+    @SerializedName("static_fire_date_unix")
+    @Expose
     private Integer staticFireDateUnix;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Integer getFlightNumber() {
         return flightNumber;
@@ -187,14 +226,6 @@ public class Launches {
 
     public void setStaticFireDateUnix(Integer staticFireDateUnix) {
         this.staticFireDateUnix = staticFireDateUnix;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

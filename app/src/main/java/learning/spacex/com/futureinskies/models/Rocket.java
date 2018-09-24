@@ -1,18 +1,29 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Rocket {
 
+    @SerializedName("rocket_id")
+    @Expose
     private String rocketId;
+    @SerializedName("rocket_name")
+    @Expose
     private String rocketName;
+    @SerializedName("rocket_type")
+    @Expose
     private String rocketType;
+    @SerializedName("first_stage")
+    @Expose
     private FirstStage firstStage;
+    @SerializedName("second_stage")
+    @Expose
     private SecondStage secondStage;
+    @SerializedName("fairings")
+    @Expose
     private Fairings fairings;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getRocketId() {
         return rocketId;
@@ -60,14 +71,6 @@ public class Rocket {
 
     public void setFairings(Fairings fairings) {
         this.fairings = fairings;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

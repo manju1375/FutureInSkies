@@ -1,22 +1,41 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Engines {
 
+    @SerializedName("number")
+    @Expose
     private Integer number;
+    @SerializedName("type")
+    @Expose
     private String type;
+    @SerializedName("version")
+    @Expose
     private String version;
+    @SerializedName("layout")
+    @Expose
     private String layout;
+    @SerializedName("engine_loss_max")
+    @Expose
     private Integer engineLossMax;
+    @SerializedName("propellant_1")
+    @Expose
     private String propellant1;
+    @SerializedName("propellant_2")
+    @Expose
     private String propellant2;
+    @SerializedName("thrust_sea_level")
+    @Expose
     private ThrustSeaLevel_ thrustSeaLevel;
+    @SerializedName("thrust_vacuum")
+    @Expose
     private ThrustVacuum_ thrustVacuum;
+    @SerializedName("thrust_to_weight")
+    @Expose
     private Integer thrustToWeight;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Integer getNumber() {
         return number;
@@ -96,14 +115,6 @@ public class Engines {
 
     public void setThrustToWeight(Integer thrustToWeight) {
         this.thrustToWeight = thrustToWeight;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

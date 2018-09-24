@@ -1,14 +1,17 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class ThrustSeaLevel_ {
 
+    @SerializedName("kN")
+    @Expose
     private Integer kN;
+    @SerializedName("lbf")
+    @Expose
     private Integer lbf;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Integer getKN() {
         return kN;
@@ -24,14 +27,6 @@ public class ThrustSeaLevel_ {
 
     public void setLbf(Integer lbf) {
         this.lbf = lbf;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

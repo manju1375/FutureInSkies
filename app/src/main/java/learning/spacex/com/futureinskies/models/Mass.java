@@ -1,37 +1,32 @@
 
 package learning.spacex.com.futureinskies.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Mass {
 
-    private Integer kg;
-    private Integer lb;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @SerializedName("kg")
+    @Expose
+    private Double kg;
+    @SerializedName("lb")
+    @Expose
+    private Double lb;
 
-    public Integer getKg() {
+    public Double getKg() {
         return kg;
     }
 
-    public void setKg(Integer kg) {
+    public void setKg(Double kg) {
         this.kg = kg;
     }
 
-    public Integer getLb() {
+    public Double getLb() {
         return lb;
     }
 
-    public void setLb(Integer lb) {
+    public void setLb(Double lb) {
         this.lb = lb;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
