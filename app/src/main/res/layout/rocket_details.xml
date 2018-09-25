@@ -1,20 +1,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <android.support.v7.widget.CardView
         android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        card_view:cardCornerRadius="2dp"
+        android:descendantFocusability="blocksDescendants">
+
+    <LinearLayout
+    android:id="@+id/heading_lay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/design_default_color_primary"
+    android:padding="25dp"
+    android:orientation="vertical"
+        android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Launch Details"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+    </LinearLayout>
+
 
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:padding="8dp"
+            android:id="@+id/heading_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="25dp"
+            android:layout_marginTop="40dp"
+            android:descendantFocusability="blocksDescendants">
+
 
             <ImageView
                 android:id="@+id/ivlaunch"
@@ -27,18 +56,29 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                 android:textColor="@android:color/holo_blue_dark"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/tvmissionname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/holo_blue_dark"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/tvlaunchdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/holo_blue_dark"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/tvlaunchwiki"
@@ -46,44 +86,84 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                 android:textColor="@android:color/holo_blue_dark"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/tvlaunchyouttube"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
-
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
             <TextView
                 android:id="@+id/tvlaunchcustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
-
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
+
+
     <android.support.v7.widget.CardView
         android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:id="@+id/rocketdetails">
+        android:id="@+id/rocketdetails"
+        app:cardElevation="8dp"
+        card_view:cardCornerRadius="2dp"
+       >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvloading"
             android:text="Loading..."/>
+
         <LinearLayout
-            android:id="@+id/llrocket"
-            android:padding="8dp"
+            android:id="@+id/heading_layout_rckt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@color/design_default_color_primary"
+            android:padding="25dp"
+            android:orientation="vertical"
+            android:descendantFocusability="blocksDescendants"
+            android:focusableInTouchMode="false">
 
-            <ImageView
-                android:id="@+id/ivrocket"
-                android:layout_margin="5dp"
+            <TextView
+                android:id="@+id/tv_heading_rckt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rocket Details"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars = "vertical"
+                android:scrollbarStyle="insideOverlay"
+                android:paddingTop="70dp">
+
+            <LinearLayout
+                android:id="@+id/heading_layout_rocket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:scrollbars="vertical"
+                android:focusable="false"
+                android:layout_margin="25dp">
+
+
             <TextView
                 android:id="@+id/rocketname"
                 android:layout_width="match_parent"
@@ -91,42 +171,67 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                 android:textColor="@android:color/holo_blue_dark"/>
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
+
             <TextView
                 android:id="@+id/rocketdesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
+
             <TextView
                 android:id="@+id/rocketwiki"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/enginetype"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/engineversion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/landinglegsnumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/landinglegsmaterial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp" />
+
 
         </LinearLayout>
+            </ScrollView>
     </android.support.v7.widget.CardView>
 </LinearLayout>

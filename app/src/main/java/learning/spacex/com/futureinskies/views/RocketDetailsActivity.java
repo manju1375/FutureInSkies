@@ -22,6 +22,7 @@ import org.w3c.dom.Text;
 
 import java.util.Arrays;
 
+import learning.spacex.com.futureinskies.DateUtils;
 import learning.spacex.com.futureinskies.R;
 import learning.spacex.com.futureinskies.adapter.LaunchesAdapter;
 import learning.spacex.com.futureinskies.models.Launches;
@@ -75,7 +76,7 @@ public class RocketDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.rocket_details_main);
         initalizeViews();
         getAndSetLaunchDetails();
-        task=(VolleyRequestProcess) getLastCustomNonConfigurationInstance();
+        //task=(VolleyRequestProcess) getLastCustomNonConfigurationInstance();
 
         if (task==null) {
             showDialog();
@@ -162,11 +163,11 @@ public class RocketDetailsActivity extends AppCompatActivity {
         launchVideolink = intent.getString("launchVideolink");
         //customerString = intent.getString("customerString");
 
-        launchFlighttv.setText(flightNumber);
-        launchMissiontv.setText(missionName);
-        launchDatetv.setText(launchDate);
-        launchWikitv.setText(launchwikiLink);
-        launchVideotv.setText(launchVideolink);
+        launchFlighttv.setText("Flight No: "+flightNumber);
+        launchMissiontv.setText("Mission Name: "+missionName);
+        launchDatetv.setText("Launch Date:"+"\n"+ DateUtils.convertUnixdateToString(Long.parseLong(launchDate)));
+        launchWikitv.setText("Wiki Link:"+"\n"+launchwikiLink);
+        launchVideotv.setText("Video Link:"+"\n"+launchVideolink);
         //launchcustomertv.setText(customerString);
 
         URL_DATA.append(intent.getString("rocketName"));
@@ -200,11 +201,11 @@ public class RocketDetailsActivity extends AppCompatActivity {
     }
 
     public void setRocketDetails(){
-        rocketNameTv.setText(rocketDetails.getName());
-        rocketDescTv.setText(rocketDetails.getDescription());
-        rocketWikiTv.setText(rocketDetails.getWikipedia());
-        rocketEngineTypeTv.setText(rocketDetails.getEngines().getType());
-        rocketEngineVersionTv.setText(rocketDetails.getEngines().getVersion());
+        rocketNameTv.setText("Name: "+rocketDetails.getName());
+        rocketDescTv.setText("Desc:"+"\n"+rocketDetails.getDescription());
+        rocketWikiTv.setText("Wiki Link:"+"\n"+rocketDetails.getWikipedia());
+        rocketEngineTypeTv.setText("EngineType: "+rocketDetails.getEngines().getType());
+        rocketEngineVersionTv.setText("Engine Version: "+rocketDetails.getEngines().getVersion());
         //rocketLandingLegsTv.setText(""+rocketDetails.getLandingLegs().getNumber());
         //rocketLandingMaterialTv.setText(""+rocketDetails.getLandingLegs().getMaterial());
     }

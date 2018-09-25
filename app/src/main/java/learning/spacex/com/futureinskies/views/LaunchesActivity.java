@@ -49,7 +49,7 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
         recyclerView =  findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        task=(VolleyRequestProcess) getLastCustomNonConfigurationInstance();
+        //task=(VolleyRequestProcess) getLastCustomNonConfigurationInstance();
 
         if (task==null) {
             showDialog();
@@ -74,7 +74,7 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
         Bundle bundle = new Bundle();
         bundle.putString("flightNumber",Integer.valueOf(launches.get(item).getFlightNumber()).toString());
         bundle.putString("missionName",launches.get(item).getMissionName());
-        bundle.putString("launchDate",launches.get(item).getLaunchDateUtc());
+        bundle.putString("launchDate",""+launches.get(item).getLaunchDateUnix());
         bundle.putString("launchwikiLink",launches.get(item).getLinks().getWikipedia());
         bundle.putString("launchVideolink",launches.get(item).getLinks().getVideoLink());
         bundle.putString("rocketName",launches.get(item).getRocket().getRocketId());
