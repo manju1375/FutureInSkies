@@ -67,6 +67,11 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:id="@+id/rocketdetails">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvloading"
+            android:text="Loading..."/>
         <LinearLayout
             android:id="@+id/llrocket"
             android:padding="8dp"

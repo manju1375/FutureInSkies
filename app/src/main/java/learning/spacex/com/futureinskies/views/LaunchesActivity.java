@@ -58,7 +58,7 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
            task.processRequest();
         }
         else {
-            task.attach(activity);
+            task.attach(this);
             //updateProgress(task.getProgress());
             markAsDone();
         }
@@ -70,13 +70,15 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
     public void onItemClick(int item) {
 
 
-        Intent rocketdetails =new Intent();
+        Intent rocketdetails =new Intent(activity,RocketDetailsActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("flightNumber",Integer.valueOf(launches.get(item).getFlightNumber()).toString());
         bundle.putString("missionName",launches.get(item).getMissionName());
         bundle.putString("launchDate",launches.get(item).getLaunchDateUtc());
         bundle.putString("launchwikiLink",launches.get(item).getLinks().getWikipedia());
         bundle.putString("launchVideolink",launches.get(item).getLinks().getVideoLink());
+        bundle.putString("rocketName",launches.get(item).getRocket().getRocketId());
+        rocketdetails.putExtras(bundle);
         startActivity(rocketdetails);
 
     }
@@ -104,10 +106,10 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
 
 
     class VolleyRequestProcess {
-        LaunchesActivity activity;
 
-        public VolleyRequestProcess(LaunchesActivity activity) {
-           attach(activity);
+
+        public VolleyRequestProcess(LaunchesActivity lactivity) {
+           attach(lactivity);
         }
         protected void processRequest() {
             showDialog();
@@ -120,8 +122,8 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
         void detach() {
             activity=null;
         }
-        void attach(LaunchesActivity activity) {
-            this.activity=activity;
+        void attach(LaunchesActivity lactivity) {
+            activity=lactivity;
         }
 
     }

@@ -56,8 +56,6 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
         holder.missonName.setText(launch.getMissionName());
         holder.launchdate.setText("at "+DateUtils.convertUnixdateToString(launch.getLaunchDateUnix()));
         holder.sitename.setText("in "+launch.getLaunchSite().getSiteName());
-        holder.bind(listener,position);
-
 
         Picasso.with(context)
                 .load(launch.getLinks().getMissionPatchSmall())
@@ -66,12 +64,7 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Launches launch = launchesLists.get(position);
-                Intent skipIntent = new Intent(v.getContext(), ProfileActivity.class);
-                skipIntent.putExtra(KEY_NAME, developersList1.getLogin());
-                skipIntent.putExtra(KEY_URL, developersList1.getHtml_url());
-                skipIntent.putExtra(KEY_IMAGE, developersList1.getAvatar_url());
-                v.getContext().startActivity(skipIntent);*/
+             listener.onItemClick(position);
             }
         });
 
@@ -108,16 +101,6 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
             linearLayout = (LinearLayout) itemView.findViewById(R.id.linearLayout);
 
         }
-
-        public void bind(final OnItemClickListener  listener, final int position){
-            linearLayout.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view) {
-                    listener.onItemClick(position);
-                }
-            });
-        }
-
     }
 
     public interface OnItemClickListener {
