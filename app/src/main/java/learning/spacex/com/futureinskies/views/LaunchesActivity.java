@@ -84,6 +84,13 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
         bundle.putString("launchwikiLink",launches.get(item).getLinks().getWikipedia());
         bundle.putString("launchVideolink",launches.get(item).getLinks().getVideoLink());
         bundle.putString("rocketName",launches.get(item).getRocket().getRocketId());
+        bundle.putString("customerName", "");
+        try{
+            bundle.putString("customerName",launches.get(item).getRocket().getSecondStage().getPayloads().get(0).getCustomers().get(0));
+        }
+        catch (Exception e){
+            bundle.putString("customerName", "");
+        }
         rocketdetails.putExtras(bundle);
         startActivity(rocketdetails);
 

@@ -179,14 +179,17 @@ public class RocketDetailsActivity extends AppCompatActivity {
         launchDate = intent.getString("launchDate");
         launchwikiLink = intent.getString("launchwikiLink");
         launchVideolink = intent.getString("launchVideolink");
-        //customerString = intent.getString("customerString");
+        customerString = intent.getString("customerName");
 
         launchFlighttv.setText("Flight No: "+flightNumber);
         launchMissiontv.setText("Mission Name: "+missionName);
         launchDatetv.setText("Launch Date:"+"\n"+ DateUtils.convertUnixdateToString(Long.parseLong(launchDate)));
         launchWikitv.setText("Wiki Link:"+"\n"+launchwikiLink);
         launchVideotv.setText("Video Link:"+"\n"+launchVideolink);
-        //launchcustomertv.setText(customerString);
+        if(!customerString.equalsIgnoreCase("")){
+            launchcustomertv.setText("Customer Name: "+customerString);
+        }
+
 
         URL_DATA.append(intent.getString("rocketName"));
 
@@ -226,7 +229,10 @@ public class RocketDetailsActivity extends AppCompatActivity {
         rocketWikiTv.setText("Wiki Link:"+"\n"+rocketDetails.getWikipedia());
         rocketEngineTypeTv.setText("EngineType: "+rocketDetails.getEngines().getType());
         rocketEngineVersionTv.setText("Engine Version: "+rocketDetails.getEngines().getVersion());
-        //rocketLandingLegsTv.setText(""+rocketDetails.getLandingLegs().getNumber());
-        //rocketLandingMaterialTv.setText(""+rocketDetails.getLandingLegs().getMaterial());
+        //rocketLandingLegsTv.setText("Landing Legs No: "+rocketDetails.getLandingLegs().getNumber());
+        if(rocketDetails.getLandingLegs().getMaterial()!=null)
+            rocketLandingLegsTv.setText("Landing Legs No and Material:"+"\n"+rocketDetails.getLandingLegs().getNumber()+" and "+rocketDetails.getLandingLegs().getMaterial().toString());
+        else
+            rocketLandingLegsTv.setText("Landing Legs No: "+rocketDetails.getLandingLegs().getNumber());
     }
 }
