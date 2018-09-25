@@ -44,7 +44,7 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
         // this method will be called whenever our ViewHolder is created
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.launches_list, parent, false);
-        return new ViewHolder(v);
+        return new ViewHolder(v,listener);
     }
 
     @Override
@@ -60,14 +60,6 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
         Picasso.with(context)
                 .load(launch.getLinks().getMissionPatchSmall())
                 .into(holder.image_url);
-
-        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-             listener.onItemClick(position);
-            }
-        });
-
     }
 
     @Override
@@ -78,7 +70,7 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
         return launchesLists.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder  {
+    public class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
 
         // define the View objects
 
@@ -88,8 +80,9 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
         public TextView sitename;
         public TextView launchsuccess;
         public LinearLayout linearLayout;
+        OnItemClickListener onItemClickListener;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView,OnItemClickListener onItemClickListener) {
             super(itemView);
 
             // initialize the View objects
@@ -99,7 +92,13 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
             launchdate = (TextView) itemView.findViewById(R.id.launchdate);
             sitename = (TextView) itemView.findViewById(R.id.sitename);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.linearLayout);
+            this.onItemClickListener=onItemClickListener;
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View view) {
+            onItemClickListener.onItemClick(getAdapterPosition());
         }
     }
 

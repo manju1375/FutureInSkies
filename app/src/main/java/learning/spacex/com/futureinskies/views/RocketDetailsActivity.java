@@ -30,7 +30,7 @@ import learning.spacex.com.futureinskies.models.RocketDetails;
 public class RocketDetailsActivity extends AppCompatActivity {
 
 
-    private static final StringBuilder URL_DATA = new StringBuilder().append("https://api.spacexdata.com/v2/rockets/");
+    private  StringBuilder URL_DATA = new StringBuilder().append("https://api.spacexdata.com/v2/rockets/");
     // launch details
     private String flightNumber;
     private String missionName;
@@ -75,6 +75,7 @@ public class RocketDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.rocket_details_main);
         initalizeViews();
         getAndSetLaunchDetails();
+        task=(VolleyRequestProcess) getLastCustomNonConfigurationInstance();
 
         if (task==null) {
             showDialog();

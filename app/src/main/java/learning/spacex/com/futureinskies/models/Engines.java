@@ -20,7 +20,7 @@ public class Engines {
     private String layout;
     @SerializedName("engine_loss_max")
     @Expose
-    private Integer engineLossMax;
+    private Double engineLossMax;
     @SerializedName("propellant_1")
     @Expose
     private String propellant1;
@@ -35,7 +35,7 @@ public class Engines {
     private ThrustVacuum_ thrustVacuum;
     @SerializedName("thrust_to_weight")
     @Expose
-    private Integer thrustToWeight;
+    private Double thrustToWeight;
 
     public Integer getNumber() {
         return number;
@@ -69,11 +69,11 @@ public class Engines {
         this.layout = layout;
     }
 
-    public Integer getEngineLossMax() {
+    public Double getEngineLossMax() {
         return engineLossMax;
     }
 
-    public void setEngineLossMax(Integer engineLossMax) {
+    public void setEngineLossMax(Double engineLossMax) {
         this.engineLossMax = engineLossMax;
     }
 
@@ -109,11 +109,11 @@ public class Engines {
         this.thrustVacuum = thrustVacuum;
     }
 
-    public Integer getThrustToWeight() {
+    public Double getThrustToWeight() {
         return thrustToWeight;
     }
 
-    public void setThrustToWeight(Integer thrustToWeight) {
+    public void setThrustToWeight(Double thrustToWeight) {
         this.thrustToWeight = thrustToWeight;
     }
 

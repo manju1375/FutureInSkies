@@ -49,7 +49,7 @@ public class LaunchesActivity extends AppCompatActivity implements LaunchesAdapt
         recyclerView =  findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        task=(VolleyRequestProcess) getLastCustomNonConfigurationInstance();
 
         if (task==null) {
             showDialog();

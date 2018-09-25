@@ -8,24 +8,24 @@ public class ThrustVacuum_ {
 
     @SerializedName("kN")
     @Expose
-    private Integer kN;
+    private Double kN;
     @SerializedName("lbf")
     @Expose
-    private Integer lbf;
+    private Double lbf;
 
-    public Integer getKN() {
+    public Double getKN() {
         return kN;
     }
 
-    public void setKN(Integer kN) {
+    public void setKN(Double kN) {
         this.kN = kN;
     }
 
-    public Integer getLbf() {
+    public Double getLbf() {
         return lbf;
     }
 
-    public void setLbf(Integer lbf) {
+    public void setLbf(Double lbf) {
         this.lbf = lbf;
     }
 

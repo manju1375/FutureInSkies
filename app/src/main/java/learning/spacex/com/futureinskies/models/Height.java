@@ -11,7 +11,7 @@ public class Height {
     private Double meters;
     @SerializedName("feet")
     @Expose
-    private Integer feet;
+    private Double feet;
 
     public Double getMeters() {
         return meters;
@@ -21,11 +21,11 @@ public class Height {
         this.meters = meters;
     }
 
-    public Integer getFeet() {
+    public Double getFeet() {
         return feet;
     }
 
-    public void setFeet(Integer feet) {
+    public void setFeet(Double feet) {
         this.feet = feet;
     }
 
